@@ -19,7 +19,8 @@ button {
 }
 
 .container {
-    height: 100%;
+    position: relative;
+    max-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -104,8 +105,7 @@ button {
 #controls {
     position: absolute;
     right: 0;
-    top: 350px;
-    left: 350px;
+    bottom: 10%;
     opacity: 0.3;
     display: flex;
     flex-direction: column;
