@@ -9,10 +9,10 @@ const leftButton = document.getElementById('leftButton');
 const rightButton = document.getElementById('rightButton');
 
 // Asignar eventos táctiles a los botones de dirección
-upButton.addEventListener('touchstart', () => setDirection('ArrowUp'));
-downButton.addEventListener('touchstart', () => setDirection('ArrowDown'));
-leftButton.addEventListener('touchstart', () => setDirection('ArrowLeft'));
-rightButton.addEventListener('touchstart', () => setDirection('ArrowRight'));
+upButton.addEventListener('touchstart', directionTouchEvent);
+downButton.addEventListener('touchstart', directionTouchEvent);
+leftButton.addEventListener('touchstart', directionTouchEvent);
+rightButton.addEventListener('touchstart', directionTouchEvent);
 
 
 //Game settings
@@ -74,6 +74,11 @@ const moveSnake = () => {
         }
         drawSnake();
     };
+};
+
+const directionTouchEvent = event => {
+    const buttonDirection = event.target.dataset.direction;
+    setDirection(buttonDirection);
 };
 
 const setDirection = newDirection => {

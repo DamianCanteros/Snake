@@ -1,3 +1,4 @@
+/* ------ GENERAL ------- */
 * {
     font-family: monospace;
 }
@@ -5,17 +6,6 @@
 body {
     height: 100%;
     margin: 0;
-}
-
-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
-    background-color: white;
-    border: none;
-    box-shadow: 0px 2px 5px rgba(0,0,0,1);
-    border-radius: 5px;
 }
 
 .container {
@@ -27,7 +17,9 @@ button {
     align-items: center;
 }
   
-#board, .boardInfo {
+/* ------ BOARD ------- */
+
+#board {
     max-width: 500px;
 }
 
@@ -37,10 +29,23 @@ button {
     width: 100%;
 }
 
-#startButton, .boardInfo {
-    font-size: 25px;
+.square {
+    aspect-ratio: 1;
 }
 
+.emptySquare {
+    background-color: rgb(99, 255, 159);
+}
+
+.snakeSquare {
+    background-color: rgb(92, 189, 2);
+}
+
+.foodSquare {
+    background-color: rgb(255, 0, 34);
+}
+
+/* ------ GAME OVER ------- */
 #gameOver {
     display: none;
     color: hsl(0, 0%, 13%);
@@ -69,43 +74,40 @@ button {
     }
 }
 
+
+/* ------ BOTONES ------- */
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background-color: white;
+    border: none;
+    box-shadow: 0px 2px 5px rgba(0,0,0,1);
+    border-radius: 5px;
+}
+
 .boardInfo {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    margin-top: 170px;
+    margin-top: 10px;
 }
 
 #startButton {
+    margin-right: 30px;
+    order: 1;
+    height: 60px;
     padding: 10px 20px 10px 20px;
     background-color: rgb(255, 0, 34);
     color: white;
-}
-
-#scoreBoard {
-    display: inline-flex;
-    min-width: 120px;
-}
-
-.square {
-    aspect-ratio: 1;
-}
-
-.emptySquare {
-    background-color: rgb(99, 255, 159);
-}
-
-.snakeSquare {
-    background-color: rgb(92, 189, 2);
-}
-
-.foodSquare {
-    background-color: rgb(255, 0, 34);
+    font-size: 25px;
 }
 
 #controls {
-    position: absolute;
-    right: 0;
-    bottom: 65px;
+    order: 2;
+    margin-left: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
