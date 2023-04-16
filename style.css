@@ -92,13 +92,12 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 10px;
 }
 
 #startButton {
     margin-right: 30px;
     order: 1;
-    height: 60px;
+    height: 56px;
     padding: 10px 20px 10px 20px;
     background-color: rgb(255, 0, 34);
     color: white;
@@ -122,25 +121,25 @@ button {
 }
 
 .triangle-up {
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 15px solid rgb(255, 0, 34);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 12px solid rgb(255, 0, 34);
 }
 
 .triangle-down {
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 15px solid rgb(255, 0, 34);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px solid rgb(255, 0, 34);
 }
 
 .triangle-left {
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-right: 15px solid rgb(255, 0, 34);
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 12px solid rgb(255, 0, 34);
 }
 
 .triangle-right {
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 15px solid rgb(255, 0, 34);
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 12px solid rgb(255, 0, 34);
 }
