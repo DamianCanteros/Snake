@@ -1,0 +1,144 @@
+* {
+    font-family: monospace;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background-color: white;
+    border: none;
+    box-shadow: 0px 2px 5px rgba(0,0,0,1);
+    border-radius: 5px;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+  
+#board, .boardInfo {
+    max-width: 500px;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    width: 100%;
+}
+
+#startButton, .boardInfo {
+    font-size: 25px;
+}
+
+#gameOver {
+    display: none;
+    color: hsl(0, 0%, 13%);
+    text-align: center;
+    font-size: 6em;
+    font-weight: bold;
+}
+
+.animation {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    animation: grow 1s ease-in-out forwards;
+}
+
+@keyframes grow {
+    0% {
+    transform: translate(-50%, -50%) scale(0.1);
+    }
+    80% {
+    transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+    transform: translate(-50%, -50%) scale(0.8);
+    }
+}
+
+.boardInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+#startButton {
+    padding: 10px 20px 10px 20px;
+    background-color: rgb(255, 0, 34);
+    color: white;
+}
+
+#scoreBoard {
+    display: inline-flex;
+    min-width: 150px;
+}
+
+.square {
+    aspect-ratio: 1;
+}
+
+.emptySquare {
+    background-color: rgb(99, 255, 159);
+}
+
+.snakeSquare {
+    background-color: rgb(92, 189, 2);
+}
+
+.foodSquare {
+    background-color: rgb(255, 0, 34);
+}
+
+#controls {
+    position: fixed;
+    top: 55%;
+    left: 65%;
+    opacity: 0.25;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+.leftright-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+}
+
+.triangle-up {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid rgb(255, 0, 34);
+}
+
+.triangle-down {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 15px solid rgb(255, 0, 34);
+}
+
+.triangle-left {
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 15px solid rgb(255, 0, 34);
+}
+
+.triangle-right {
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid rgb(255, 0, 34);
+}

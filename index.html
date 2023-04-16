@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="board"></div>
+        <div class="boardInfo">
+            <div>
+                Score: <div id="scoreBoard"></div>
+            </div>
+            <button id="startButton">Start</button>
+        </div>
+        <div id="controls">
+            <button id="upButton"><span class="triangle-up"></span></button>
+            <div class="leftright-container">
+                <button id="leftButton"><span class="triangle-left"></span></button>
+                <button id="rightButton"><span class="triangle-right"></span></button>
+            </div>
+            <button id="downButton"><span class="triangle-down"></span></button>
+        </div> 
+        <div id="gameOver" class="animation">Game Over</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
