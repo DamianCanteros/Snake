@@ -10,7 +10,7 @@ const rightButton = document.getElementById('rightButton');
 
 //Game settings
 const boardSize = 10;
-const gameSpeed = 150;
+const gameSpeed = 200;
 const squareTypes = {
     emptySquare: 0,
     snakeSquare: 1,
