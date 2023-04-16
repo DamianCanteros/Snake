@@ -70,6 +70,7 @@ const moveSnake = () => {
 };
 
 const directionTouchEvent = event => {
+    event.preventDefault();
     const buttonDirection = event.target.dataset.direction;
     setDirection(buttonDirection);
 };
