@@ -8,13 +8,6 @@ const downButton = document.getElementById('downButton');
 const leftButton = document.getElementById('leftButton');
 const rightButton = document.getElementById('rightButton');
 
-// Asignar eventos táctiles a los botones de dirección
-upButton.addEventListener('touchstart', directionTouchEvent);
-downButton.addEventListener('touchstart', directionTouchEvent);
-leftButton.addEventListener('touchstart', directionTouchEvent);
-rightButton.addEventListener('touchstart', directionTouchEvent);
-
-
 //Game settings
 const boardSize = 10;
 const gameSpeed = 150;
@@ -83,7 +76,7 @@ const directionTouchEvent = event => {
 
 const setDirection = newDirection => {
     direction = newDirection;
-}
+};
 
 const directionEvent = key => {
     switch (key.code) {
@@ -172,3 +165,9 @@ document.addEventListener('keydown', (event) => {
         startGame();
     }
 });
+
+// Asignar eventos táctiles a los botones de dirección
+upButton.addEventListener('touchstart', directionTouchEvent);
+downButton.addEventListener('touchstart', directionTouchEvent);
+leftButton.addEventListener('touchstart', directionTouchEvent);
+rightButton.addEventListener('touchstart', directionTouchEvent);
