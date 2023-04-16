@@ -102,10 +102,11 @@ button {
 }
 
 #controls {
-    position: fixed;
+    position: absolute;
+    right: 0;
     top: 350px;
     left: 350px;
-    opacity: 0.25;
+    opacity: 0.3;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
