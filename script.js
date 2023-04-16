@@ -161,3 +161,9 @@ const startGame = () => {
 }
 
 startButton.addEventListener('click', startGame);
+
+document.addEventListener('keydown', (event) => {
+    if (event.code === "Enter") {
+        startGame();
+    }
+});
