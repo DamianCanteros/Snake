@@ -10,7 +10,7 @@ body {
 
 .container {
     position: relative;
-    max-height: 600px;
+    max-height: 540px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -98,7 +98,7 @@ button {
 }
 
 #startButton {
-    margin-right: 16px;
+    margin-right: 8px;
     order: 1;
     height: 42px;
     padding: 10px 16px 10px 16px;
@@ -109,7 +109,7 @@ button {
 
 #controls {
     order: 2;
-    margin-left: 16px;
+    margin-left: 8px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
