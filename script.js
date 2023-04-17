@@ -10,7 +10,7 @@ const rightButton = document.getElementById('rightButton');
 
 //Game settings
 const boardSize = 10;
-const gameSpeed = 200;
+const gameSpeed = 150;
 const squareTypes = {
     emptySquare: 0,
     snakeSquare: 1,
@@ -32,17 +32,46 @@ let boardSquares;
 let emptySquares;
 let moveInterval;
 
-const addFood = () => {
-    score++;
-    updateScore();
-    createRandomFood();
+// ------ FUNCTIONS IN GAME -------
+
+// Movements
+const setDirection = newDirection => {
+    direction = newDirection;
+}
+
+const directionEvent = (key, newDirection) => {
+    const directionToSet = newDirection || key.code;
+    switch (directionToSet) {
+        case 'ArrowUp':
+            direction != 'ArrowDown' && setDirection(directionToSet);
+            break;
+        case 'ArrowDown':
+            direction != 'ArrowUp' && setDirection(directionToSet);
+            break;
+        case 'ArrowLeft':
+            direction != 'ArrowRight' && setDirection(directionToSet);
+            break;
+        case 'ArrowRight':
+            direction != 'ArrowLeft' && setDirection(directionToSet);
+            break;
+    };
 };
 
-const gameOver = () => {
-    gameOverSign.style.display = 'block';
-    clearInterval(moveInterval)
-    startButton.disabled = false;
-};
+upButton.addEventListener('click', () => {
+    directionEvent(null, 'ArrowUp');
+});
+
+downButton.addEventListener('click', () => {
+    directionEvent(null, 'ArrowDown');
+});
+
+leftButton.addEventListener('click', () => {
+    directionEvent(null, 'ArrowLeft');
+});
+
+rightButton.addEventListener('click', () => {
+    directionEvent(null, 'ArrowRight');
+});
 
 const moveSnake = () => {
     const newSquare = String(
@@ -69,31 +98,11 @@ const moveSnake = () => {
     };
 };
 
-const directionTouchEvent = event => {
-    event.preventDefault();
-    const buttonDirection = event.target.dataset.direction;
-    setDirection(buttonDirection);
-};
-
-const setDirection = newDirection => {
-    direction = newDirection;
-};
-
-const directionEvent = key => {
-    switch (key.code) {
-        case 'ArrowUp':
-            direction != 'ArrowDown' && setDirection(key.code)
-            break;
-        case 'ArrowDown':
-            direction != 'ArrowUp' && setDirection(key.code)
-            break;
-        case 'ArrowLeft':
-            direction != 'ArrowRight' && setDirection(key.code)
-            break;
-        case 'ArrowRight':
-            direction != 'ArrowLeft' && setDirection(key.code)
-            break;
-    };
+// Food
+const addFood = () => {
+    score++;
+    updateScore();
+    createRandomFood();
 };
 
 const createRandomFood = () => {
@@ -101,9 +110,19 @@ const createRandomFood = () => {
     drawSquare(randomEmptySquare, 'foodSquare');
 };
 
+// Signs
+
+const gameOver = () => {
+    gameOverSign.style.display = 'block';
+    clearInterval(moveInterval)
+    startButton.disabled = false;
+};
+
 const updateScore = () => {
     scoreBoard.innerText = score;
 };
+
+// ------ MAQUETEADO -------
 
 const drawSnake = () => {
     snake.forEach( square => drawSquare(square, 'snakeSquare'));
@@ -166,9 +185,3 @@ document.addEventListener('keydown', (event) => {
         startGame();
     }
 });
-
-// Asignar eventos táctiles a los botones de dirección
-upButton.addEventListener('touchstart', directionTouchEvent);
-downButton.addEventListener('touchstart', directionTouchEvent);
-leftButton.addEventListener('touchstart', directionTouchEvent);
-rightButton.addEventListener('touchstart', directionTouchEvent);
