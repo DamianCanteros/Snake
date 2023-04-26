@@ -2,7 +2,8 @@
 const board = document.getElementById('board');
 const scoreBoard = document.getElementById('scoreBoard');
 const startButton = document.getElementById('startButton');
-const gameOverSign = document.getElementById('gameOver');
+const gameOverSign = document.getElementById('signOver');
+const signStart = document.getElementById('signStart');
 const upButton = document.getElementById('upButton');
 const downButton = document.getElementById('downButton');
 const leftButton = document.getElementById('leftButton');
@@ -10,7 +11,7 @@ const rightButton = document.getElementById('rightButton');
 
 //Game settings
 const boardSize = 10;
-const gameSpeed = 150;
+const gameSpeed = 175;
 const squareTypes = {
     emptySquare: 0,
     snakeSquare: 1,
@@ -145,8 +146,8 @@ const drawSquare = (square, type) => {
 
 const createBoard = () => {
     boardSquares.forEach( (row, rowIndex) => {
-        row.forEach( (column, columnndex) => {
-            const squareValue = `${rowIndex}${columnndex}`;
+        row.forEach( (column, columnIndex) => {
+            const squareValue = `${rowIndex}${columnIndex}`;
             const squareElement = document.createElement('div');
             squareElement.setAttribute('class', 'square emptySquare');
             squareElement.setAttribute('id', squareValue);
@@ -168,6 +169,7 @@ const setGame = () => {
 }
 
 const startGame = () => {
+    signStart.style.display = 'none';
     setGame();
     gameOverSign.style.display = 'none';
     startButton.disabled = true;
@@ -185,3 +187,5 @@ document.addEventListener('keydown', (event) => {
         startGame();
     }
 });
+
+document.addEventListener('DOMContentLoaded', setGame);
