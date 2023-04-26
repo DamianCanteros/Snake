@@ -28,6 +28,9 @@ body {
 }
 
 button {
+  color: hsl(0, 0%, 93%);
+  font-weight: 600;
+  font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,19 +38,10 @@ button {
   padding: 8px 21px;
   border-radius:5px;
   border: none;
-  background-color: hsl(172, 100%, 93%);
   box-shadow: 0px 7px 0px 3px hsl(0, 0%, 13%), -5px -5px 15px 3px rgba(255, 255, 255, 0.2);
 }
 
-button:active {
-  background-color: hsl(0, 0%, 7%);
-}
-
-button:focus {
-  outline: none;
-}
 /* ------ BOARD ------- */
-
 #board {
     max-width: 300px;
     display: grid;
@@ -93,7 +87,7 @@ button:focus {
 #signStart, #signOver {
   display: none;
   text-align: center;
-  font-size: 2em;
+  font-size: 4em;
   font-weight: bold;
   position: absolute;
   top: 45%;
@@ -160,8 +154,6 @@ button:focus {
     height: 42px;
     padding: 10px 16px 10px 16px;
     background-color: rgb(255, 0, 34);
-    color: white;
-    font-size: 25px;
 }
 
 .buttons {
